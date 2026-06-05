@@ -1,0 +1,28 @@
+# 1. El nombre de tu flujo de trabajo
+name: Integracion Continua (CI)
+
+#2. El evento: Cuando se va a ejecutar?
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+#3. El trabajo: Que se va a ejecutar?
+jobs:
+  testeo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar codigo fuente
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Ejecutar pruebas
+        run: npm test  

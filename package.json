@@ -1,0 +1,12 @@
+{
+  "name": "node-github-action",
+  "version": "1.0.0",
+  "description": "Mi primera prueba con node y github actions",
+  "license": "ISC",
+  "author": "baramorph",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test index.test.js"
+  }
+}
